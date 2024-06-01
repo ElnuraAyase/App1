@@ -20,7 +20,8 @@ print("it was printed 20 times.") # messages that will come after the loop
 
 #loop the input from user for new names
 
-name = input("Enter your name: ")
+
 while True:
-  print(name.capitalize())
-  input 
+    name = input("Enter your name: ") #will ask repeatedly
+    print(name.capitalize())
+ 
