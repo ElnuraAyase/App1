@@ -7,6 +7,7 @@ while True:
   match user_action:
       case 'add':
         todo= input("Enter a todo: ")
+        todos.append(todo)
   
 
 
