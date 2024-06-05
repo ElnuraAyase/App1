@@ -2,6 +2,11 @@
 todo = []
 
 while True:
-  user_action = input("Type add or show: ")
+  user_action = input("Type add, show or exit: ")
 
-match user_action:
+  match user_action:
+      case 'add':
+        todo= input("Enter a todo: ")
+  
+
+
