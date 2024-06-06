@@ -11,5 +11,6 @@ while True:
       case 'show':
         for item in todos:
           print(item)
-
+      case 'exit':
+        break
 
