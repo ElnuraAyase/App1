@@ -13,4 +13,4 @@ while True:
           print(item)
       case 'exit':
         break
-
+print("Bye!")
