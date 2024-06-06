@@ -3,7 +3,7 @@ todo = []
 
 while True:
   user_action = input("Type add, show or exit: ")
-
+  user_action = user_action.strip() #method will clean spaces from the user input , it will avoud error if space was added mistakenly
   match user_action:
       case 'add':
         todo= input("Enter a todo: ")
