@@ -1,4 +1,4 @@
-# With strip metho 
+# With strip method , which removes the trailing space from the string , example if input is add or add_ with a space 
 todo = []
 
 while True:
