@@ -8,12 +8,13 @@ while True:
         case 'add': 
             todo = input("Enter a todo: ")
             todos.append(todo)
-        case 'show' | 'display':  # for different versions of the same command, | = bitwise,or operstor
+        case 'show' | 'display':  # 2. for different versions of the same command, | = bitwise,or operstor
             for item in todos:
+            item= item.title()  # 3. method for upper case for each word
             print(item)
         case 'exit':
              break
-        case _: # for any other input discluding the offered ones
+        case _: # 1. for any other input discluding the offered ones
              print("The command is unknown.")
 
 print("Bye!")
