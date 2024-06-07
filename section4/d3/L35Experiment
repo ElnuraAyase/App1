@@ -8,12 +8,12 @@ while True:
         case 'add': 
             todo = input("Enter a todo: ")
             todos.append(todo)
-        case 'show':
+        case 'show' | 'display':  # for different versions of the same command
             for item in todos:
             print(item)
         case 'exit':
              break
-        case _:
+        case _: # for any other input discluding the offered ones
              print("The command is unknown.")
 
 print("Bye!")
