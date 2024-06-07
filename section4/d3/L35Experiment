@@ -8,7 +8,7 @@ while True:
         case 'add': 
             todo = input("Enter a todo: ")
             todos.append(todo)
-        case 'show' | 'display':  # for different versions of the same command
+        case 'show' | 'display':  # for different versions of the same command, | = bitwise,or operstor
             for item in todos:
             print(item)
         case 'exit':
