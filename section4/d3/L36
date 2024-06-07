@@ -2,3 +2,10 @@ meals = ['pasta', 'salad', 'pizza']
 
 for meal in meals: meal = 'pasta'
     print(meal.capitalize())
+
+print("Bye!")
+
+meals = ['pasta', 'salad', 'pizza']
+
+for meal in "meals": 
+    print(meal.capitalize())
