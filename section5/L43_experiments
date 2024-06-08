@@ -1,0 +1,6 @@
+ # in console you will see how many methods there are for list or str or any other , just use dir() and add list,str or int in ()
+dir(list)
+
+
+mylist.__setitem__(1, "d") # it is == mylist[1] = "d"
+
