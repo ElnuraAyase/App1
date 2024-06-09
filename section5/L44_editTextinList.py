@@ -7,4 +7,5 @@ boxex[1] = 1.write.txt
 # this will give you an output that will change the 1st item in the list 
 box.replace(".", "_")
 # '1_door_txt'  this is the output
-
+#do not forget to store it, otherwise it will just show the output
+box = box.replace(".", "_")
