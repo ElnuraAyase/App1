@@ -8,7 +8,7 @@ boxex[1] = 1.write.txt
 box.replace(".", "_")
 # '1_door_txt'  this is the output
 #do not forget to store it, otherwise it will just show the output
-box = box.replace(".", "_")
+box = box.replace(".", "_", 1)
 print(box)
 
 #tuples  same as list but with () and are immutable 
