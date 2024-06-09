@@ -1,29 +1,4 @@
 
-
-# add edit
-todos = []
-
-while True:
-    user_action = input("Type add, edit,  show or exit: ")
-    user_action = user_action.strip()
-
-    match user_action:
-        case 'add':
-            todo= input("Enter a todo: ")
-            todos.append(todo)
-        case 'show':
-            for item in todos:
-                print(item)
-# add edit
-        case'edit':
-# list-indexing 
-            number= input("Enter the number of a todo to edit: ")
-            existing_todos = todo [number] 
-            print(existing_todos)     
-        case 'exit':
-            break
-print("Bye!")
-
 # replacing todo for the edit choice
 todos = []
 
