@@ -1,0 +1,12 @@
+# error code is here , because new assigned to b ,not the the list
+elements = ['a', 'b', 'c']
+new = 'x'
+new = elements[1]
+print(elements)   
+
+# bug fix 
+elements = ['a', 'b', 'c']
+new = 'x'
+# here the list is assigned to new which is b ,so it will change to the x
+new = elements[1]
+print(elements)
