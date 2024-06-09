@@ -1,0 +1,15 @@
+
+ranking = ['John', 'Sen', 'Lisa']
+name = input("Enter the name of the person ")
+show_rnk = ranking.index(name) + 1
+print(show_rnk)
+
+
+# added while loop to ask again, 
+#add methods lower and strip for matching any type of str that was input to the actual list
+while True:
+    name = input("Enter the name of the person ").lower().strip()
+    normalized_ranking = [n.lower() for n in ranking]
+    if name in normalized_ranking:
+        show_rnk = normalized_ranking.index(name) + 1
+        print(show_rnk)
