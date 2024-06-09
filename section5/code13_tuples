@@ -1,0 +1,2 @@
+#The code defines a tuple named color_codes containing three tuples, each containing three color codes.
+color_codes = (('red','white','black'), (4, 5, 6), (8.7, 6.7, 5.5))
