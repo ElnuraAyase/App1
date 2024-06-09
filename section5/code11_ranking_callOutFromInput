@@ -1,0 +1,13 @@
+"""
+The ranking list represents the ranking of 3 athletes:John, Sen, and Lisa. John won 1st place, Sen got 2nd, and Lisa 3rd. 
+Task is to create a program that:
+
+1. Contains the above list.
+2. Prompts the user to input a rank number.
+3. Returns the person who has the given rank.
+"""
+  
+ranking = ['John', 'Sen', 'Lisa']
+usr = int(input("Enter a rank number: ")) - 1     # it is a list, that stars with 1 ,so we have to take 1 away
+show_rnk = ranking[usr]
+print(show_rnk)
