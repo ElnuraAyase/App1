@@ -9,3 +9,6 @@ box.replace(".", "_")
 # '1_door_txt'  this is the output
 #do not forget to store it, otherwise it will just show the output
 box = box.replace(".", "_")
+print(box)
+
+#tuples  same as list but with () and are immutable 
