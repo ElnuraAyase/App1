@@ -21,7 +21,7 @@ while True:
             todos[number] = new_todo
         case 'complete':                                             # complete - delete statment                  
             number = int(input("Enter number of todo to delete: ")   # for number, as pop removes numbers
-            todos.pop(number)                                         # make sure it is todos not todo, or will be error: str don't have atribute pop()
+            todos.pop(number -1 )                                    # add -1 to balance # make sure it is todos not todo, or will be error: str don't have atribute pop()
         case 'exit':
             break
         case _: # 1. for any other input discluding the offered ones
