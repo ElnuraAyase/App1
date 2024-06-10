@@ -1,1 +1,20 @@
+# remove()
 
+myList = ['a', 'b', 'c']
+myList.remove('b')
+
+# pop() removes by index or automatically the last one : index-1
+
+myList = ['a', 'b', 'c']
+myList.remove(1)
+
+# clear()
+'''
+1. in pycharm console, if write dir(list) will show methods for list 
+2. in pycharm console,  to learn about method enter : help(list.methodYouNeed)
+
+help(list.clear)
+Help on method_descriptor:
+clear(self, /)
+    Remove all items from list.
+'''
