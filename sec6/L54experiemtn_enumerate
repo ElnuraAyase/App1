@@ -1,0 +1,22 @@
+# use i for index and j for an item still will return index and item 
+for i,j in enumerate("Arkada"):
+    print(i,j)
+'''
+output
+0 A
+1 r
+2 k
+3 a
+4 d
+5 a
+'''
+
+# another option to make an output start with 1 ,not 0 
+for i, j in enumerate("Arkada"):
+    print(i + 1, j)
+# same but other version 
+i = 1                           # Initialize index to 1
+for j in "Arkada":
+    print(i, j)
+    i += 1                      # Increment index by 1
+
