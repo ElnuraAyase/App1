@@ -11,10 +11,10 @@ age = 30
 greeting = f"Hello, my name is {name} and I am {age} years old."
 
 print(greeting)
+#output : Hello, my name is Alice and I am 30 years old
 
 #another example on Console
 item = 'place'
 row = f"{index}-{item}"
 row
-#output
-'1-place'
+#output: '1-place'
