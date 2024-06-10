@@ -1,1 +1,3 @@
-
+myList= ['a','s', 'd']                                     #no need for if function
+print(len(myList))
+# output is : 3( as 3 items in the list
