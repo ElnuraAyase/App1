@@ -17,7 +17,7 @@ while True:
         case 'edit':
             number= int(input("Enter the nuber of a todo to edit: "))
             number = number -1
-            new_todo = input(enter new todo: ")
+            new_todo = input("Enter new todo: ")                      # add " 
             todos[number] = new_todo
         case 'complete':                                             # complete - delete statment                  
             number = int(input("Enter number of todo to delete: ")   # for number, as pop removes numbers
