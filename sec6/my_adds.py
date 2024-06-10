@@ -14,8 +14,9 @@ while True:
                 todos.append(todo)
         case 'show':
             if todos:
-                for index, item in enumerate(todos) :
-                    print(index +1, '-', item)# enumerate()
+                for index, item in enumerate(todos):                      # enumerate()
+                    row = f"{index+1}-{item}"                             # f string "{}"
+                    print(row)
             else:
                 print("The list is empty, try add a todo ")
                 todo = input("Enter a todo, (or press 'x' to go back): ").strip()
@@ -29,7 +30,7 @@ while True:
                         number = number -1
                         if 0 <= number < len(todos):     
                             new_todo = input("Enter new todo or 'x' to go back: ").strip()    #  to go back, in case you don't want to change the to do
-                            if todo.lower() != 'x':
+                            if new_todo.lower() != 'x':                                       # changed to new_todo, instead of todo , correction
                             todos[number] = new_todo
                             break                                                              # back to new lines
                         else:
