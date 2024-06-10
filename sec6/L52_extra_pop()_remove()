@@ -18,3 +18,7 @@ Help on method_descriptor:
 clear(self, /)
     Remove all items from list.
 '''
+myList = ['a', 'b', 'c']
+myList.clear()
+print(myList)  # This should print an empty list: []
+
