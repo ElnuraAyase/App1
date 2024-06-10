@@ -1,5 +1,4 @@
 
-# replacing todo for the edit choice
 todos = []
 
 while True:
@@ -13,8 +12,8 @@ while True:
                 todos.append(todo)
         case 'show':
             if todos:
-                for index, item in enumerate(todos):   # enumerate()
-                    row = f"{index + 1}-{item}"            #f string
+                for index, item in enumerate(todos):   # enumerate() gives an index of the item
+                    row = f"{index + 1}-{item}"         #f string - formated string literal, for python 3.6
                     print(row)
             else:
                 print("The list is empty, try add a todo ")
@@ -24,7 +23,7 @@ while True:
         case'edit':
             if todos:
                 while True:
-                    number = (input("Enter the number of a todo to edit(or press 'x' to go back): "))
+                    number = input("Enter the number of a todo to edit(or press 'x' to go back): ")
                     if number.lower() == 'x':
                         break
                     try:
@@ -42,11 +41,11 @@ while True:
                 todo = input("enter a todo, (or press 'x' to go back): ").strip()
                 if todo.lower() !='x':
                     todos.append(todo)
-        case 'remove':                                             # remove - delete statment
+        case 'remove':                                                                              # remove - delete statment
             if todos:
                 while True:
                     try:
-                        number = (input("Enter number of todo to delete: "))  # for number, as pop removes numbers
+                        number = input("Enter number of todo to delete: ")  # for number, as pop removes numbers
                         if number.lower() == 'x':
                             break
                         number = int(number)-1
