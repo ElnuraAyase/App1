@@ -8,21 +8,23 @@ while True:
 
     match user_action:
         case 'add':
-            todo = input("Enter a todo: ") + "\n"  # back slash n is a break line, it is better to use it in print( 'hi' + '\n'
+            todo = input("Enter a todo: ") + "\n"      # back slash n is a break line, it is better to use it in print( 'hi' + '\n'
             if todo.lower() != 'x':
-                file = open('todo.txt', 'r')  # to read the file that stored items
-                todos = file.readlines()  # reads and create lists of each line
+                file = open('todo.txt', 'r')           # to read the file that stored items
+                todos = file.readlines()                # reads and create lists of each line
                 file.close()
                 todos.append(todo)
 
                 file = open('todo.txt',
-                            'w')  # 'w' overwrites the file ,doesn't store the previous # open function for file object, for read you add 'r' for write 'w'
-                file.writelines(todos)  # file method for file objects
-                file.close()
+                            'w')                             # 'w' overwrites the file ,doesn't store the previous # open function for file object, for read you add 'r' for write 'w'
+                file.writelines(todos)                       # file method for file objects
+                file.close()    
         case 'show':
+            with open('todo.txt', 'r') as file:                # to read the file that stored items
+                todos = file.readlines()                         # reads and creates lists of each line
             if todos:
-                for index, item in enumerate(todos):   # enumerate()
-                    row = f"{index + 1}-{item}"            #f string
+                for index, item in enumerate(todos):
+                    row = f"{index + 1}-{item}"
                     print(row)
             else:
                 print("The list is empty, try add a todo ")
@@ -30,6 +32,8 @@ while True:
                 if todo.lower() !='x':
                     todos.append(todo)
         case'edit':
+            with open('todo.txt', 'r') as file:                     # to read the file that stored items
+                todos = file.readlines()                            # reads and creates lists of each line
             if todos:
                 while True:
                     number = (input("Enter the number of a todo to edit(or press 'x' to go back): "))
@@ -50,11 +54,13 @@ while True:
                 todo = input("enter a todo, (or press 'x' to go back): ").strip()
                 if todo.lower() !='x':
                     todos.append(todo)
-        case 'remove':                                             # remove - delete statment
+        case 'remove':                                             
+            with open('todo.txt', 'r') as file:                       # to read the file that stored items
+                todos = file.readlines()                              # reads and creates lists of each line
             if todos:
                 while True:
                     try:
-                        number = (input("Enter number of todo to delete: "))  # for number, as pop removes numbers
+                        number = (input("Enter number of todo to delete: "))  
                         if number.lower() == 'x':
                             break
                         number = int(number)-1
@@ -73,5 +79,4 @@ while True:
         case _: # 1. for any other input discluding the offered ones
              print("The command is unknown.")
 print("Bye!")
-
 
