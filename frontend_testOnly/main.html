@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Todo List Manager</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            width: 800px;
+            background-color: #eee;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .todo-input {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .todo-input input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            outline: none;
+        }
+
+        .todo-input button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .todo-list-container {
+            position: relative;
+            width: 100%;
+            max-height: 300px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            padding: 10px;
+        }
+
+        .todo-list .todo-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5px;
+            padding: 10px 15px;
+            border-radius: 3px;
+            background-color: #f2f2f2;
+            cursor: pointer;
+        }
+
+        .todo-list .todo-item.completed {
+            text-decoration: line-through;
+            background-color: #ddd;
+        }
+
+        .todo-list .todo-item .todo-text {
+            flex: 1;
+        }
+
+        .todo-list .todo-item button {
+            padding: 5px;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        .todo-list .todo-item button:hover {
+            opacity: 0.8;
+        }
+
+        #show-btn {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .timer-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .timer-container h2 {
+            margin-bottom: 10px;
+        }
+
+        #timer {
+            font-size: 24px;
+            color: #007bff;
+        }
+
+        .timer-controls {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .timer-controls button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        #start-btn {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        #pause-btn,
+        #stop-btn {
+            background-color: #ccc;
+            color: #333;
+        }
+    </
