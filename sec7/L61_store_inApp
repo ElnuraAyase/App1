@@ -9,6 +9,8 @@ while True:
         case 'add':
             todo= input("Enter a todo: ")
             todos.append(todo)
+            file = open('todo.txt', 'w')                  # open function for file object, for read you add 'r' for write 'w'
+            file.writelines(todos)                             #file method for file objects
         case 'show':
             for index, item in enumerate(todos):                   
                 row = f"{index+1}-{item}"                          
@@ -19,7 +21,7 @@ while True:
             new_todo = input("Enter new todo: ")                      
             todos[number] = new_todo
         case 'complete':                                                   
-            number = int(input("Enter number of todo to delete: ")   
+            number = int(input("Enter number of todo to delete: "))  # add )   
             todos.pop(number -1 )                                  
         case 'exit':
             break
