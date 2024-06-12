@@ -1,6 +1,6 @@
 import datetime
 import os
-#from functions import  get_todos, write_todos
+#from functions import  get_todos, function.write_todos
 
 import  functions                                          #functions.functions.get_todos() or use : MODULE import functions and in line 14 
 
@@ -11,7 +11,7 @@ while True:
         if todo.lower() != 'x':
             todos = functions.get_todos()    # for import function
             todos.append(todo + '\n')
-            write_todos(todos)
+            function.write_todos(todos)
     elif user_action.startswith("show"):
         todos = functions.get_todos()
         if todos:
@@ -35,7 +35,7 @@ while True:
                         if new_todo.lower() == 'x':
                             break
                         todos[number] = new_todo + "\n"
-                        write_todos(todos)
+                        function.write_todos(todos)
                         break
                     else:
                         print("Invalid number, enter a valid number.")
@@ -54,7 +54,7 @@ while True:
                     number = int(number) - 1
                     if 0 <= number < len(todos):
                         todos.pop(number)
-                        write_todos(todos)
+                        function.write_todos(todos)
                         break
                     else:
                         print("Invalid number, enter a valid number.")
