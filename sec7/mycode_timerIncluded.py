@@ -3,7 +3,7 @@ import os
 
 
 # Function to read todos from file
-def read_todos():     #                         custom function
+def read_todos():                                #                         custom function
     with open('todo.txt', 'r') as file:
         return file.readlines()
 
@@ -16,8 +16,8 @@ def write_todos(todos):
 
 while True:
     user_action = input("Type add, edit, show, remove, start, stop, or exit: ").lower().strip()
-    if user_action.startswith("add"):
-        todo = user_action[4:]  # if conditional slicing
+    if user_action.startswith("add"):                      #startswith() is a better usr friendly funk
+        todo = user_action[4:]                             # if conditional slicing
         if todo.lower() != 'x':
             todos = read_todos()
             todos.append(todo + '\n')
