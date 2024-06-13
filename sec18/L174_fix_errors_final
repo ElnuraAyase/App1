@@ -20,7 +20,7 @@ window = sg.Window(' To-Do List and Time Tracker App',
                            [exit_button]],
                    font=('Helvetica', 17))  #window created ,must be a list, not a string
 while True:
-    event, values = window.read()  # method
+    event, values = window.read(timeout=10)  #  # error : timeout=10 without it will not show the time
     window("clock").update(value=time.strftime("%b, %d, %Y, %H:%M:%S ")) # added new
 
     print(1, event)
