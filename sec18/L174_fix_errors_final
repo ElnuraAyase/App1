@@ -30,6 +30,7 @@ while True:
             todos.append(new_todo)
             functions.write_todos(todos)
             window['todos'].update(values=todos)
+            window['todo'].update(value='')  # empty the line 
 
         case "Edit":
             try:
@@ -45,12 +46,15 @@ while True:
             except IndexError:
                 sg.popup("Please select an item first", font=("Helvetica", 16))   #popup is the funk of PySimpleGUI 2. add font
         case "Complete":
-            todo_to_complete = values['todos'][0]
-            todos = functions.get_todos()
-            todos.remove(todo_to_complete)
-            functions.write_todos(todos)
-            window['todos'].update(values=todos)
-            window['todo'].update(value='')
+            try:
+                todo_to_complete = values['todos'][0]
+                todos = functions.get_todos()
+                todos.remove(todo_to_complete)
+                functions.write_todos(todos)
+                window['todos'].update(values=todos)
+                window['todo'].update(value='')
+            except IndexError:
+                sg.popup("Please select an item first", font=("Helvetica", 16))  #1. popup is the funk of PySimpleGUI 2. add font
         case "Exit":
             break
         case 'todos':
