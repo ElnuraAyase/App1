@@ -15,19 +15,16 @@ complete_button = sg.Button("Complete")
 exit_button = sg.Button("Exit")
 
 window = sg.Window(' To-Do List and Time Tracker App',
-                   layout=[[clock],                      # visually added 
+                   layout=[[clock],                      # visually added
                        [label],
                            [input_box, add_button],
                            [list_box, edit_button, complete_button],
                            [exit_button]],
                    font=('Helvetica', 17))  #window created ,must be a list, not a string
 while True:
-    event, values = window.read(timeout=300)  #  # error : timeout=300 without it will not show the time
-    window["clock"].update(value=time.strftime("%b, %d, %Y, %H:%M:%S ")) # added new, window bracets from () to []
+    event, values = window.read(timeout=200)  # error : timeout=10 without it will not show the time
+    window["clock"].update(value=time.strftime("%b, %d, %Y, %H:%M:%S ")) # added new
 
-    print(1, event)
-    print(2, values)
-    print(3, values['todos'])
     match event:
         case "Add":
             todos = functions.get_todos()
@@ -35,7 +32,7 @@ while True:
             todos.append(new_todo)
             functions.write_todos(todos)
             window['todos'].update(values=todos)
-            window['todo'].update(value='')  # empty the line 
+            window['todo'].update(value='')
 
         case "Edit":
             try:
@@ -49,7 +46,7 @@ while True:
                 window['todos'].update(values=todos)
                 window['todo'].update(value='')
             except IndexError:
-                sg.popup("Please select an item first", font=("Helvetica", 16))   #popup is the funk of PySimpleGUI 2. add font
+                sg.popup("Please select an item first", font=("Helvetica", 16))  #1. popup is the funk of PySimpleGUI 2. add font
         case "Complete":
             try:
                 todo_to_complete = values['todos'][0]
