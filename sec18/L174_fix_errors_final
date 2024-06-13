@@ -13,7 +13,8 @@ complete_button = sg.Button("Complete")
 exit_button = sg.Button("Exit")
 
 window = sg.Window(' To-Do List and Time Tracker App',
-                   layout=[[label],
+                   layout=[[clock],                      # visually added 
+                       [label],
                            [input_box, add_button],
                            [list_box, edit_button, complete_button],
                            [exit_button]],
