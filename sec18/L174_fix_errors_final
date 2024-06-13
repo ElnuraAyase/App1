@@ -2,6 +2,8 @@ import functions
 import PySimpleGUI as sg
 import time  # do not make same name for value
 
+sg.theme("DarkBlue3") # theme for colorblind and disfocusing people "CalmingBlue"
+
 clock = sg.Text('', key="clock") # add date and time
 label = sg.Text("Add your To-Do")
 input_box = sg.InputText(tooltip="Enter todo", key="todo")
