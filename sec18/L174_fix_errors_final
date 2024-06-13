@@ -1,8 +1,8 @@
 import functions
 import PySimpleGUI as sg
+import time  # do not make same name for value
 
-
-
+clock = sg.Text('', key="clock") # add date and time
 label = sg.Text("Add your To-Do")
 input_box = sg.InputText(tooltip="Enter todo", key="todo")
 add_button = sg.Button("Add")
@@ -20,6 +20,8 @@ window = sg.Window(' To-Do List and Time Tracker App',
                    font=('Helvetica', 17))  #window created ,must be a list, not a string
 while True:
     event, values = window.read()  # method
+    window("clock").update(value=time.strftime("%b, %d, %Y, %H:%M:%S ")) # added new
+
     print(1, event)
     print(2, values)
     print(3, values['todos'])
