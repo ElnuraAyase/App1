@@ -43,7 +43,7 @@ while True:
                 window['todos'].update(values=todos)
                 window['todo'].update(value='')
             except IndexError:
-                sg.popup("Please select an item first")   #popup is the funk of PySimpleGUI as sg
+                sg.popup("Please select an item first", font=("Helvetica", 16))   #popup is the funk of PySimpleGUI 2. add font
         case "Complete":
             todo_to_complete = values['todos'][0]
             todos = functions.get_todos()
