@@ -1,0 +1,133 @@
+import functions
+import PySimpleGUI as sg
+import time
+
+
+themes = ["DarkBlue3", "LightBrown2", "LightBrown8", "LightMedGreen", "LightGrey", "DarkTeal7", "SandyBeach"]              # define available themes
+current_theme_index = 0                                 # for theme selection
+
+
+def create_window(theme):                           # new model for cleaner code
+    sg.theme(theme)                               # must be added for theme in general
+
+    clock = sg.Text('', key="clock")
+    label = sg.Text("Add your To-Do")
+    input_box = sg.InputText(tooltip="Enter todo", key="todo")
+    add_button = sg.Button("Add")
+    list_box = sg.Listbox(values=functions.get_todos(), key='todos',
+                          enable_events=True, size=[40, 8])
+    edit_button = sg.Button("Edit")
+    complete_button = sg.Button("Complete")
+    theme_button = sg.Button("Change Theme")
+    exit_button = sg.Button("Exit")
+
+    timer_text = sg.Text('00:00:00', key='timer')
+    start_button = sg.Button("Start")  # added start
+    pause_button = sg.Button("Pause")
+    stop_button = sg.Button("Stop")
+
+    layout = [                                                               # make layout visible
+        [clock],
+        [label],
+        [input_box, add_button],
+        [list_box, edit_button, complete_button],
+        [theme_button, start_button, pause_button, stop_button],
+        [exit_button],
+        [timer_text]
+    ]
+
+    return sg.Window('To-Do List and Time Tracker App', layout, font=('Helvetica', 17))
+
+
+
+window = create_window(themes[current_theme_index])       # Initial window, with current index so less buttons appeared vidually
+
+timer_running = False
+timer_start_time = 0
+elapsed_time = 0
+
+while True:
+    event, values = window.read(timeout=1000)
+
+
+    window["clock"].update(value=time.strftime("%b, %d, %Y, %H:%M:%S"))              # Update clock
+
+    if timer_running:                                                         # Update timer
+        elapsed_time = int(time.time() - timer_start_time)
+        window['timer'].update(f'{elapsed_time // 3600:02}:{(elapsed_time % 3600) // 60:02}:{elapsed_time % 60:02}')
+
+    if event in (sg.WIN_CLOSED, 'Exit'):
+        break                                     # replaced here
+
+    print(1, event)
+    print(2, values)
+    if 'todos' in values:
+        print(3, values['todos'])
+    else:
+        print(3, 'No todos key in values')
+
+    match event:
+        case "Add":
+            todos = functions.get_todos()
+            new_todo = values['todo'] + "\n"
+            todos.append(new_todo)
+            functions.write_todos(todos)
+            window['todos'].update(values=todos)
+            window['todo'].update(value='')
+
+        case "Edit":
+            try:
+                todo_to_edit = values['todos'][0]
+                new_todo = values['todo']
+
+                todos = functions.get_todos()
+                index = todos.index(todo_to_edit)
+                todos[index] = new_todo + "\n"
+                functions.write_todos(todos)
+                window['todos'].update(values=todos)
+                window['todo'].update(value='')
+            except IndexError:
+                sg.popup("Please select an item first", font=("Helvetica", 16))
+
+        case "Complete":
+            try:
+                todo_to_complete = values['todos'][0]
+                todos = functions.get_todos()
+                todos.remove(todo_to_complete)
+                functions.write_todos(todos)
+                window['todos'].update(values=todos)
+                window['todo'].update(value='')
+            except IndexError:
+                sg.popup("Please select an item first", font=("Helvetica", 16))
+
+        case "Change Theme":
+            current_theme_index = (current_theme_index + 1) % len(themes)
+            new_theme = themes[current_theme_index]
+            window.close()
+            window = create_window(new_theme)
+
+        case "Start":
+            if not timer_running:
+                timer_running = True
+                timer_start_time = time.time() - elapsed_time
+
+        case "Pause":
+            if timer_running:
+                timer_running = False
+                elapsed_time = int(time.time() - timer_start_time)
+
+        case "Stop":
+            timer_running = False
+            elapsed_time = 0
+            window['timer'].update('00:00:00')
+
+        case 'todos':                  # will utomatically stop the timer when an item is selected
+            timer_running = False
+            elapsed_time = 0
+            window['timer'].update('00:00:00')
+            if values['todos']:
+                window['todo'].update(value=values['todos'][0])
+            else:
+                window['todo'].update(value='')
+
+window.close()
