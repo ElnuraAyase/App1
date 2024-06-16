@@ -5,7 +5,7 @@ import time
 themes = ["Black", "Default", "DarkBlue3", "LightBlue3",
           "LightBrown2", "LightBrown8", "LightBrown11",
           "LightGreen", "DarkGreen", "GreenMono",
-          "DarkTeal7", "SandyBeach"]          # for colorblind people and less distracting purpose
+          "DarkTeal7", "SandyBeach"]                         # for colorblind people and less distracting purpose
 current_theme_index = 0
 
 
