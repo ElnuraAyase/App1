@@ -5,3 +5,4 @@ all the names and surnames of the list and then prints the new list. The output 
 ['John Smith', 'Jay Santi', 'Eva Kuki']
 '''
 
+remove back slash for the list as pr
