@@ -3,3 +3,7 @@ Extend the given code (in the exercise area) so the code capitalizes all the nam
 
 ['John Smith', 'Jay Santi', 'Eva Kuki']
 '''
+
+names = ["john smith", "jay santi", "eva kuki"]    # here is used list comprehension to capitalize names and surnames
+names = [name.title() for name in names]   for will 
+print(names)
