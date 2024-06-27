@@ -1,4 +1,4 @@
-import streamlit as st
+import streamlit as st # to download need to hover over this import or streamlit and get the library
 
 st.title("My ToDo app")
 st.subheader("This is my app as my Thesis project")
