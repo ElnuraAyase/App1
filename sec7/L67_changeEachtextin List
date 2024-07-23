@@ -1,1 +1,3 @@
-
+filenames = ['doc.txt', 'report.txt', 'presentation.txt']
+for filename in filenames:
+    file = open(filnema,w)
