@@ -1,4 +1,4 @@
 filemanes= ["a", "b", "c"]
 for filename in filenames:
-  file = open('filename', r)
+  file = open(filename, 'r')
   
