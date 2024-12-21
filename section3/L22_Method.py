@@ -1,4 +1,4 @@
-# wring version 
+# wrong version 
 user_promt = "enter the task: "
 
 while True:
