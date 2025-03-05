@@ -37,10 +37,10 @@ response = requests.post(BASE_URL, json=invoice_data, headers=headers)
 
 # checking 
 
-if response.status_code == 201
-print("Invoice created successfully:", response.json())
+if response.status_code == 201:
+           print("Invoice created successfully:", response.json())
 else: 
-print("Error:", response.status_code, response.text)
+           print("Error:", response.status_code, response.text)
 
                       
            
